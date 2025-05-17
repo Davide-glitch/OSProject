@@ -33,4 +33,15 @@ else
     exit 1
 fi
 
+echo "Compiling score_calculator.c..."
+gcc score_calculator.c -o score_calculator
+
+if [ $? -eq 0 ]; then
+    echo "Compilation of score_calculator successful!"
+    chmod +x score_calculator
+else
+    echo "Compilation of score_calculator failed. Please check for errors."
+    exit 1
+fi
+
 echo "All compilations successful! Use ./treasure_manager for direct management or ./treasure_hub for the interactive interface."
